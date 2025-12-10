@@ -48,7 +48,7 @@ Contrast_Table <- function(out) {
 
 ################################
 experiment <- 1
-Exp1_data <- read.csv(here("original_data/VOM001_compiled_data.csv"))
+Exp1_data <- read.csv(here("original_data/Exp1_compiled_data.csv"))
 
 #check their rating of the last 10 fixed cues-----
 Exp1_fixedcheck <- Exp1_data%>%
