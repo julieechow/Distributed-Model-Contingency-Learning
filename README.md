@@ -26,7 +26,8 @@ Option B Download ZIP (no Git required)<br>
     Extract the ZIP file to your desired location<br>
     Open extracted folder in RStudio and navigate to it in your file browser
 
-4) Extract data files: Large data files (original_data, simulated_data and output files) are stored as a single zip file using Git LFS (Large File Storage). After cloning or downloading the repository, extract the zip file containing data by double clicking the zip file in your file browser.<br>
+4) Extract data files: Large data files (original_data, simulated_data and output files) are stored as a single zip file using Git LFS (Large File Storage). After cloning or downloading the repository, extract the zip file containing data by double clicking the zip file in your file browser.
+
 Note for Git users: If you have Git LFS installed, the zip file will be automatically downloaded when you clone the repository. If you do not have Git LFS installed, you can download it [here](https://git-lfs.com)
 
 
@@ -37,7 +38,6 @@ To call a package after installation, use library(name_of_package)
 
 
 Project Structure<br>
-.
 ├── ModelFunctionsLL.R                    # Core model fitting function called in multiple scripts<br>
 ├── ModelFitsAll_Single_MLE_Exp1.R        # Model fitting for Experiment 1<br>
 ├── ModelFitsAll_Single_MLE_Exp2.R        # Model fitting for Experiment 2<br>
@@ -51,7 +51,7 @@ Project Structure<br>
 ├── paramRecovery.R                       # Parameter recovery analysis<br>
 ├── script_empiricalAnalysis.R            # Empirical data analysis<br>
 ├── original_data/                        # Empirical data used for model fit and empirical analysis are located here<br>
-├── simulated_data/                       # simulated datasets required for model and parameter recovery (output files from generate_predictions[_informed.R] scripts)<br>
+├── simulated_data/                       # simulated datasets required for model and parameter recovery<br>
 └── output/                               # output files from all scripts except generate_predictions.R and generate_predictions_informed.R<br>
 
 
