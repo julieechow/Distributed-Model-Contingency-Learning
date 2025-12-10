@@ -67,7 +67,8 @@ For complete reproduction of manuscript results, run scripts in this order:
 2) Model Comparison: script_modelComparison.R <br>
 3) Visualization: plot_model_output.R <br>
 
-Supplementary Materials:<br>
+Supplementary Materials:
+
 4) Empirical Analysis: script_empiricalAnalysis.R <br>
 5) Simulated Data Generation: generate_predictions.R and generate_predictions_informed.R <br>
 6) Model Recovery Analysis: modelRecovery.R <br>
