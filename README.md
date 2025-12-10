@@ -15,16 +15,20 @@ Operating System: Windows, macOS (should also work with Linux)
 Installation Instructions<br>
 1) Install R: Download and install R from [CRAN](https://cran.r-project.org/)<br>
 2) Install [RStudio](https://www.rstudio.com/products/rstudio/download/)<br>
-3) Clone or download this repository:
+3) Clone or download this repository:<br>
 Option A Using Git (command line)
 ```bash
    git clone https://github.com/julieechow/Distributed-Model-Contingency-Learning.git
    cd Distributed-Model-Contingency-Learning
 ```
-Option B Download ZIP (no Git required)
-    Click the green <>Code button and select "Download ZIP"
-    Extract the ZIP file to your desired location
+Option B Download ZIP (no Git required)<br>
+    Click the green <>Code button and select "Download ZIP"<br>
+    Extract the ZIP file to your desired location<br>
     Open extracted folder in RStudio and navigate to it in your file browser
+
+4) Extract data files: Large data files (original_data, simulated_data and output files) are stored as a single zip file using Git LFS (Large File Storage). After cloning or downloading the repository, extract the zip file containing data by double clicking the zip file in your file browser.<br>
+Note for Git users: If you have Git LFS installed, the zip file will be automatically downloaded when you clone the repository. If you do not have Git LFS installed, you can download it [here](https://git-lfs.com)
+
 
 Required R Packages<br>
 The required R packages to run each script is reported at the start of each R script.<br>
@@ -34,21 +38,21 @@ To call a package after installation, use library(name_of_package)
 
 Project Structure<br>
 .
-├── ModelFunctionsLL.R                    # Core model fitting function called in multiple scripts
-├── ModelFitsAll_Single_MLE_Exp1.R        # Model fitting for Experiment 1
-├── ModelFitsAll_Single_MLE_Exp2.R        # Model fitting for Experiment 2
-├── ModelFitsAll_Single_MLE_Exp3.R        # Model fitting for Experiment 3
-├── ModelFitsAll_Single_MLE_Exp4.R        # Model fitting for Experiment 4
-├── script_modelComparison.R              # Model comparison and BIC analysis - takes output from preceding model fits (saved in output/ folder)
-├── plot_model_output.R                   # Generate manuscript figures
-├── generate_predictions.R                # Generate simulated datasets (uninformed) for model recovery analysis
-├── generate_predictions_informed.R       # Generate simulated datasets (informed) for model and parameter recovery analysis
-├── modelRecovery.R                       # Model recovery analysis
-├── paramRecovery.R                       # Parameter recovery analysis
-├── script_empiricalAnalysis.R            # Empirical data analysis
-├── original_data/                        # Empirical data used for model fit and empirical analysis are located here
-├── simulated_data/                       # simulated datasets required for model and parameter recovery (output files from generate_predictions[_informed.R] scripts)
-└── output/                               # output files from all scripts except generate_predictions.R and generate_predictions_informed.R
+├── ModelFunctionsLL.R                    # Core model fitting function called in multiple scripts<br>
+├── ModelFitsAll_Single_MLE_Exp1.R        # Model fitting for Experiment 1<br>
+├── ModelFitsAll_Single_MLE_Exp2.R        # Model fitting for Experiment 2<br>
+├── ModelFitsAll_Single_MLE_Exp3.R        # Model fitting for Experiment 3<br>
+├── ModelFitsAll_Single_MLE_Exp4.R        # Model fitting for Experiment 4<br>
+├── script_modelComparison.R              # Model comparison and BIC analysis - takes output from preceding model fits (saved in output/ folder)<br>
+├── plot_model_output.R                   # Generate manuscript figures<br>
+├── generate_predictions.R                # Generate simulated datasets (uninformed) for model recovery analysis<br>
+├── generate_predictions_informed.R       # Generate simulated datasets (informed) for model and parameter recovery analysis<br>
+├── modelRecovery.R                       # Model recovery analysis<br>
+├── paramRecovery.R                       # Parameter recovery analysis<br>
+├── script_empiricalAnalysis.R            # Empirical data analysis<br>
+├── original_data/                        # Empirical data used for model fit and empirical analysis are located here<br>
+├── simulated_data/                       # simulated datasets required for model and parameter recovery (output files from generate_predictions[_informed.R] scripts)<br>
+└── output/                               # output files from all scripts except generate_predictions.R and generate_predictions_informed.R<br>
 
 
 Workflow Summary<br>
@@ -63,7 +67,7 @@ For complete reproduction of manuscript results, run scripts in this order:
 2) Model Comparison: script_modelComparison.R <br>
 3) Visualization: plot_model_output.R <br>
 
-Supplementary Materials:
+Supplementary Materials:<br>
 4) Empirical Analysis: script_empiricalAnalysis.R <br>
 5) Simulated Data Generation: generate_predictions.R and generate_predictions_informed.R <br>
 6) Model Recovery Analysis: modelRecovery.R <br>
