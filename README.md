@@ -26,7 +26,7 @@ Option B Download ZIP (no Git required)<br>
     Extract the ZIP file to your desired location<br>
     Open extracted folder in RStudio and navigate to it in your file browser
 
-4) Extract data files: Large data files (original_data, simulated_data and output files) are stored as a single zip file using Git LFS (Large File Storage). After cloning or downloading the repository, extract the zip file containing data by double clicking the zip file in your file browser.
+4) Extract data files: Large data files (original_data, simulated_data and output files) are stored as a single zip file using Git LFS (Large File Storage). After cloning or downloading the repository, extract the zip file (folders.zip) containing data by double clicking the zip file in your file browser.
 
 Note for Git users: If you have Git LFS installed, the zip file will be automatically downloaded when you clone the repository. If you do not have Git LFS installed, you can download it [here](https://git-lfs.com)
 
