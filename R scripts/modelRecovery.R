@@ -1,5 +1,5 @@
 #Model recovery analysis
-#This script requires simulated data generated from the generate_predictions and generate_predictions_informed (can be found in output/simulated_data/)
+#This script requires simulated data generated from generate_predictions_informed.R (allSims RData can also be found in output/simulated_data/)
 #This script requires parameter values from empirical model fit from ModelFitsAll_Single_MLE_Exp[1-4] (also found in output/ALL_ModelOutputs.csv)
 #This script will save the parameter values used in each run of model recovery on the same simulated data
 
@@ -12,10 +12,10 @@ experiment <- 1
 generatedDataType <- "informed"
 
 if (generatedDataType=="informed"){
-  load(paste0("simulated_data/Exp", experiment, "_Informed_allSims.RData"))  
-  allSimData <- allSimData_Informed #rename to allSimData so the following code is identical for both informed and uninformed sims
-}else{
-  load(paste0("simulated_data/Exp", experiment, "_allSims.RData"))
+  load(paste0("output/simulated_data/Exp", experiment, "_Informed_allSims.RData"))  
+  allSimData <- allSimData_Informed #rename to allSimData 
+}else{ #only applies if generatedDataType is not == informed
+  load(paste0("output/simulated_data/Exp", experiment, "_allSims.RData"))
 }
 
 dat <- allSimData %>%
@@ -260,46 +260,3 @@ summary_overall <- recovery_summary %>%
     percent_Distributed = mean(chosen_model == "Distributed") * 100,
     .groups = "drop"
   )
-
-
-# --- Save outputs ---
-if (generatedDataType=="informed"){
-  write.csv(recovery_df, paste0("output/Experiment", experiment, "_Informed_ModelRecovery_AllSims.csv"), row.names = FALSE)
-}else{
-  write.csv(recovery_df, paste0("output/Experiment", experiment, "_ModelRecovery_AllSims.csv"), row.names = FALSE)
-}
-
-#Code to generate individual experiment tile plots
-Exp1_generateMatrix <- summary_overall %>%
-  pivot_longer(
-    cols = c("percent_Delta","percent_Distributed"),
-    names_to = "chosen_model",
-    names_prefix = "percent_",
-    values_to = "percent"
-  )
-
-# Heatmap plot
-Exp_modelR_matrix <- ggplot(Exp1_generateMatrix, aes(x = generated_model, y = chosen_model, fill = percent)) +
-  geom_tile(color="black") +
-  geom_text(aes(label = round(percent,1)), color="white", size=5) +
-  scale_fill_continuous(limits= c(0,100),low="lightblue", high="darkblue")+
-  # scale_fill_gradient(low="lightblue", high="darkblue") +
-  theme_minimal(base_size = 14) +
-  theme(axis.text = element_text(size = 13, colour = "black"),
-        axis.title.y = element_text(size = 16, margin = margin(t = 0, r = 20, b = 0, l = 0)),
-        axis.title.x = element_text(size = 16, margin = margin(t = 10, r = 0, b = 0, l = 0)),
-        panel.grid = element_blank())+
-  labs(title="Experiment 1", x="Generating Model", y="Recovered Model")
-
-file_name_root <- 'fig/'
-graph_file_type <- '.jpeg'
-dpi <- 96
-gg_width <- 10
-gg_height <- 10
-if (generatedDataType=="informed"){
-  ggsave(paste0(file_name_root, "Exp", experiment, "_Informed_modelR_matrix", graph_file_type), Exp_modelR_matrix, "jpeg",
-         height = gg_height*1.5, width = gg_width*1.5, units = "cm", dpi = dpi)
-}else{
-  ggsave(paste0(file_name_root, "Exp", experiment, "_modelR_matrix", graph_file_type), Exp_modelR_matrix, "jpeg",
-         height = gg_height*1.5, width = gg_width*1.5, units = "cm", dpi = dpi)
-}

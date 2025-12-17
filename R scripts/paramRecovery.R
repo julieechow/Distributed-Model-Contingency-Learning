@@ -1,6 +1,5 @@
 #Parameter Recovery analysis
 #This script requires model recovery fit parameter values from modelRecovery.R (also found in output/)
-#Note that this code allows you to run parameter recovery for simulations generated with both data-informed and uninformed process; only data-informed sim parameter recovery are reported in Supp Materials
 #This script will save the dataframe generated with iterative sampling, and the average correlation coefficients between true and recovered parameter values for each iteration
 
 #load packages

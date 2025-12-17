@@ -45,20 +45,19 @@ Project Structure<br>
 ├── ModelFitsAll_Single_MLE_Exp4.R        # Model fitting for Experiment 4<br>
 ├── script_modelComparison.R              # Model comparison and BIC analysis - takes output from preceding model fits (saved in output/ folder)<br>
 ├── plot_model_output.R                   # Generate manuscript figures<br>
-├── generate_predictions.R                # Generate simulated datasets (uninformed) for model recovery analysis<br>
-├── generate_predictions_informed.R       # Generate simulated datasets (informed) for model and parameter recovery analysis<br>
+├── generate_predictions_informed.R       # Generate data-informed simulated datasets for model and parameter recovery analysis<br>
 ├── modelRecovery.R                       # Model recovery analysis<br>
 ├── paramRecovery.R                       # Parameter recovery analysis<br>
 ├── script_empiricalAnalysis.R            # Empirical data analysis<br>
 ├── original_data/                        # Empirical data used for model fit and empirical analysis are located here<br>
 ├── simulated_data/                       # simulated datasets required for model and parameter recovery<br>
-└── output/                               # output files from all scripts except generate_predictions.R and generate_predictions_informed.R<br>
+└── output/                               # output files from all scripts except generate_predictions_informed.R<br>
 
 
 Workflow Summary<br>
 Before running scripts, please ensure you unzip folders.zip and extract the three data files (original_data, simulated_data and output)<br>
 Place all three folders in the same environment as R scripts.<br>
-Note: All scripts save their output to the output/ folder (simulated data from generate_predictions and generate_predictions_informed are saved to simulated_data/). This allows you to run scripts out of order or in isolation, as each script reads from and writes to this shared output directory.
+Note: All scripts save their output to the output/ folder (simulated data from generate_predictions_informed are saved to simulated_data/). This allows you to run scripts out of order or in isolation, as each script reads from and writes to this shared output directory.
 
 
 For complete reproduction of manuscript results, run scripts in this order:
@@ -70,7 +69,7 @@ For complete reproduction of manuscript results, run scripts in this order:
 Supplementary Materials:
 
 4) Empirical Analysis: script_empiricalAnalysis.R <br>
-5) Simulated Data Generation: generate_predictions.R and generate_predictions_informed.R <br>
+5) Simulated Data Generation: generate_predictions_informed.R <br>
 6) Model Recovery Analysis: modelRecovery.R <br>
 7) Parameter Recovery Analysis: paramRecovery.R 
 
